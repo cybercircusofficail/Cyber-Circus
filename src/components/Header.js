@@ -3,9 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { FaSearch, FaBars } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { BsMoonFill, BsSunFill } from "react-icons/bs";
-import { GrLanguage } from "react-icons/gr";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -13,7 +12,6 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import Image from "next/image";
 
@@ -23,135 +21,125 @@ const Header = () => {
   const navigationLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
     { href: "/portfolio", label: "Portfolio" },
+    { href: "/contact", label: "Contact" },
+    { href: "/career", label: "Careers" },
   ];
 
   return (
-    <>
-      <header className="sticky top-0 z-50 w-full border border-b-blue-700 bg-background">
-        <div className="mx-auto flex h-16 items-center justify-between px-8">
-          <Link href="/" className="flex items-center gap-2" prefetch={false}>
-            <Image
-              src={"/transparnt-logo.png"}
-              alt="logo"
-              width={60}
-              height={60}
-            />
-            <p className="font-semibold"></p>
-            <h1 className="text-lg font-semibold leading-tight hidden md:block bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-900">
-              Cyber Circus
-            </h1>
-          </Link>
-          <nav className="hidden items-center justify-between gap-8 text-sm font-medium md:flex">
-            <div className="flex justify-center gap-2 rounded-xl p-4">
-              <Link className="p-2 px-4 group" href="/">
-                Home
-                <div className="h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-blue-500"></div>
-              </Link>
-              <Link className="p-2 px-4 group" href="/about">
-                About
-                <div className="h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-blue-500"></div>
-              </Link>
-              <Link className="p-2 px-4 group" href="/portfolio">
-                Portfolio
-                <div className="h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-blue-500"></div>
-              </Link>
-              <Link className="p-2 px-4 group" href="/contact">
-                Contact
-                <div className="h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-blue-500"></div>
-              </Link>
-              <Link className="p-2 px-4 group" href="/career">
-                Career
-                <div className="h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-blue-500"></div>
-              </Link>
-            </div>
-          </nav>
-          <div className="flex items-center gap-4">
-            <Button
-              variant="button"
-              className="text-foreground bg-blue-700 hover:bg-blue-900 p-3 text-white"
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-sm">
+      <div className="mx-auto max-w-7xl flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
+        <Link 
+          href="/" 
+          className="flex items-center gap-3 transition-opacity hover:opacity-80" 
+          prefetch={false}
+          aria-label="Cyber Circus Home"
+        >
+          <Image
+            src="/transparnt-logo.png"
+            alt="Cyber Circus Logo"
+            width={50}
+            height={50}
+            className="h-10 w-10 sm:h-12 sm:w-12"
+            priority
+          />
+          <span className="hidden sm:block text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
+            Cyber Circus
+          </span>
+        </Link>
+
+        <nav className="hidden md:flex items-center gap-1">
+          {navigationLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
             >
-              <GrLanguage />
-              <span>English</span>
-            </Button>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full">
-                  <FaSearch className="h-4 w-4 text-foreground" />
-                  <span className="sr-only">Search</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-[300px] p-4 mr-24">
-                <div className="relative">
-                  <FaSearch className="absolute left-2.5 top-2.5 h-4 w-4 text-foreground" />
-                  <Input
-                    type="search"
-                    placeholder="Search..."
-                    className="pl-8 w-full"
-                  />
-                </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <BsSunFill className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                  <BsMoonFill className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                  <span className="sr-only">Toggle theme</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem
-                  onClick={() => setTheme("light")}
-                  className="cursor-pointer"
-                >
-                  Light
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={() => setTheme("dark")}
-                  className="cursor-pointer"
-                >
-                  Dark
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={() => setTheme("system")}
-                  className="cursor-pointer"
-                >
-                  System
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <Sheet>
-              <SheetTrigger asChild>
+              {link.label}
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 scale-x-0 origin-left transition-transform duration-300 hover:scale-x-100" />
+            </Link>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-3">
+          <Button
+            variant="default"
+            className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-lg px-6 py-2.5 font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+            asChild
+          >
+            <Link href="/contact">Get Started</Link>
+          </Button>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800"
+                aria-label="Toggle theme"
+              >
+                <BsSunFill className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-gray-700 dark:text-gray-300" />
+                <BsMoonFill className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-gray-700 dark:text-gray-300" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-40">
+              <DropdownMenuItem
+                onClick={() => setTheme("light")}
+                className="cursor-pointer"
+              >
+                Light
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => setTheme("dark")}
+                className="cursor-pointer"
+              >
+                Dark
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => setTheme("system")}
+                className="cursor-pointer"
+              >
+                System
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-lg md:hidden border border-gray-200 dark:border-gray-700"
+                aria-label="Toggle navigation menu"
+              >
+                <FaBars className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <nav className="flex flex-col gap-4 mt-8">
+                {navigationLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-base font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2 border-b border-gray-200 dark:border-gray-700"
+                    prefetch={false}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
                 <Button
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full md:hidden"
+                  variant="default"
+                  className="mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white w-full"
+                  asChild
                 >
-                  <FaBars className="h-4 w-4 text-foreground" />
-                  <span className="sr-only">Toggle navigation menu</span>
+                  <Link href="/contact">Get Started</Link>
                 </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-                <nav className="grid gap-4 p-4">
-                  {navigationLinks.map((link) => (
-                    <Link
-                      key={link.label}
-                      href={link.href}
-                      className="text-base font-medium text-foreground hover:text-foreground transition-colors"
-                      prefetch={false}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </div>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
-      </header>
-    </>
+      </div>
+    </header>
   );
 };
 

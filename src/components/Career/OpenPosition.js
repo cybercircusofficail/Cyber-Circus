@@ -3,61 +3,60 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Fade } from "react-awesome-reveal";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { MapPin, Briefcase, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const OpenPosition = ({ positions }) => {
   return (
     <div className="mt-12">
       <Fade cascade damping={0.1} triggerOnce>
-        <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-8">
+        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8">
           Open Positions
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {positions.map((position) => (
+          {positions.map((position, index) => (
             <motion.div
               key={position.id}
-              whileHover={{
-                y: -5,
-                boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
-              }}
-              className="bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden border border-slate-200 dark:border-slate-700 transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 flex flex-col"
             >
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="inline-flex items-center px-3 py-1 text-sm font-medium rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+                  <Badge className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-0 px-3 py-1">
                     {position.type}
-                  </span>
-                  <span className="text-slate-500 dark:text-slate-400 text-sm">
+                  </Badge>
+                  <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
+                    <MapPin className="h-4 w-4" />
                     {position.location}
-                  </span>
+                  </div>
                 </div>
-                <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+
+                <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   {position.title}
                 </h4>
-                <p className="text-slate-600 dark:text-slate-400 text-sm mb-3">
+                <div className="flex items-center gap-2 mb-4 text-sm text-gray-600 dark:text-gray-400">
+                  <Briefcase className="h-4 w-4" />
                   {position.department}
-                </p>
-                <p className="text-slate-700 dark:text-slate-300 mb-6">
+                </div>
+
+                <p className="text-gray-600 dark:text-gray-300 mb-6 flex-grow leading-relaxed line-clamp-4">
                   {position.description}
                 </p>
-                <div className="mt-auto">
-                  <button className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 flex items-center justify-center">
+
+                <Button
+                  asChild
+                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-lg group"
+                >
+                  <Link href={`/career?position=${position.id}`}>
                     Apply Now
-                    <svg
-                      className="ml-2 w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      />
-                    </svg>
-                  </button>
-                </div>
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
               </div>
             </motion.div>
           ))}

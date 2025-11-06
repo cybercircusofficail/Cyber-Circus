@@ -79,7 +79,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="w-full py-4 mb-12 px-4 sm:px-8  md:px-16 relative overflow-hidden ">
+    <section id="contact-form" className="w-full py-4 mb-12 px-4 sm:px-8  md:px-16 relative overflow-hidden ">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <Fade triggerOnce>

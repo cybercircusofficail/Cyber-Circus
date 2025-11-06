@@ -1,71 +1,69 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Fade } from "react-awesome-reveal";
+import { Button } from "@/components/ui/button";
+import { Mail, Copy, Check } from "lucide-react";
 
 const NoPositions = () => {
-  const [copyStatus, setCopyStatus] = useState("");
-  const emailAddress = "career@cybercircusconnect.com";
+  const [copyStatus, setCopyStatus] = useState(false);
+  const emailAddress = "careers@cybercircus.com";
 
   const copyToClipboard = () => {
     navigator.clipboard
       .writeText(emailAddress)
       .then(() => {
-        setCopyStatus("Copied!");
-        // Reset the status after 2 seconds
-        setTimeout(() => setCopyStatus(""), 2000);
+        setCopyStatus(true);
+        setTimeout(() => setCopyStatus(false), 2000);
       })
       .catch((err) => {
-        setCopyStatus("Failed to copy");
         console.error("Failed to copy: ", err);
-        setTimeout(() => setCopyStatus(""), 2000);
       });
   };
 
   return (
     <div className="mt-12">
       <Fade triggerOnce>
-        <div className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8 md:p-12 text-center max-w-2xl mx-auto border border-slate-200 dark:border-slate-700">
-          <div className="w-20 h-20 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg
-              className="w-10 h-10 text-blue-600 dark:text-blue-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12 text-center max-w-2xl mx-auto border border-gray-200 dark:border-gray-700"
+        >
+          <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+            <Mail className="w-10 h-10 text-blue-600 dark:text-blue-400" />
           </div>
-          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
             No Open Positions Right Now
           </h3>
-          <p className="text-slate-600 dark:text-slate-400 mb-6">
-            We don't have any open positions at the moment, but we're always on
-            the lookout for exceptional talent. Send us your resume, and we'll
-            keep you in mind for future opportunities.
+          <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-lg mx-auto">
+            We don't have any open positions at the moment, but we're always on the lookout for exceptional engineering talent. Send us your resume, and we'll keep you in mind for future opportunities that match your skills and expertise.
           </p>
-          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-            <button
+          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <Button
               onClick={copyToClipboard}
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 shadow-md relative"
+              className="group bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-lg px-8 py-6 text-base shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden"
             >
-              Send Your Resume {emailAddress}
-              {copyStatus && (
-                <span className="absolute top-0 right-0 -mt-2 -mr-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">
-                  {copyStatus}
-                </span>
-              )}
-            </button>
+              <span className="flex items-center gap-2 relative z-10">
+                {copyStatus ? (
+                  <>
+                    <Check className="h-5 w-5" />
+                    Email Copied!
+                  </>
+                ) : (
+                  <>
+                    <Copy className="h-5 w-5 group-hover:rotate-12 transition-transform" />
+                    Send Resume to {emailAddress}
+                  </>
+                )}
+              </span>
+            </Button>
           </motion.div>
-        </div>
+          <p className="mt-6 text-sm text-gray-500 dark:text-gray-400">
+            Click the button above to copy the email address, or send your resume directly
+          </p>
+        </motion.div>
       </Fade>
     </div>
   );
