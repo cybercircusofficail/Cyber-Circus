@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block access to admin or private areas if needed
+# Disallow: /admin/
+
+Sitemap: https://cybercircusconnect.com/sitemap.xml
