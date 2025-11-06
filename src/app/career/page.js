@@ -1,22 +1,32 @@
 import BannerSection from "@/components/Career/BannerSection";
 import CareerOpportunities from "@/components/Career/CareerOpportunities";
-import React from "react";
 
 export const metadata = {
   title: "Careers at Cyber Circus | Join Our Engineering Team",
   description:
-    "Join Cyber Circus, a leading enterprise software development company. Explore engineering career opportunities, work on innovative projects, and grow your career with our expert team.",
-  keywords:
-    "cyber circus careers, software engineering jobs, enterprise software developer jobs, technology careers, software development careers, engineering opportunities",
+    "Join Cyber Circus, a leading enterprise software development company. Explore engineering career opportunities, work on innovative projects, and grow your career with our expert team. Competitive benefits and professional development.",
+  keywords: [
+    "cyber circus careers",
+    "software engineering jobs",
+    "enterprise software developer jobs",
+    "technology careers",
+    "software development careers",
+    "engineering opportunities",
+    "developer jobs",
+    "IT jobs",
+  ],
   openGraph: {
     title: "Careers at Cyber Circus | Join Our Engineering Team",
     description:
       "Join Cyber Circus, a leading enterprise software development company. Explore engineering career opportunities and innovative projects.",
     url: "https://cybercircusconnect.com/career",
   },
+  alternates: {
+    canonical: "https://cybercircusconnect.com/career",
+  },
 };
 
-const page = () => {
+export default function CareerPage() {
   const openPositions = [
     {
       id: 1,
@@ -58,6 +68,4 @@ const page = () => {
       />
     </>
   );
-};
-
-export default page;
+}

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import React from "react";
 
 const Footer = () => {
@@ -12,27 +13,27 @@ const Footer = () => {
             </h6>
             <ul className="space-y-2.5">
               <li>
-                <a href="/" className="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="/services" className="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   Enterprise Web Development
                 </a>
               </li>
               <li>
-                <a href="/" className="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="/services" className="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   Mobile Application Development
                 </a>
               </li>
               <li>
-                <a href="/" className="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="/services" className="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   Cloud Architecture & DevOps
                 </a>
               </li>
               <li>
-                <a href="/" className="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="/services" className="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   Digital Transformation Consulting
                 </a>
               </li>
               <li>
-                <a href="/" className="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="/services" className="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   UI/UX Design & User Experience
                 </a>
               </li>
@@ -47,6 +48,11 @@ const Footer = () => {
               <li>
                 <a href="/" className="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   Home
+                </a>
+              </li>
+              <li>
+                <a href="/services" className="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  Services
                 </a>
               </li>
               <li>
