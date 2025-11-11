@@ -1,6 +1,7 @@
 {
-  "name": "Cyber Circus",
-  "short_name": "CyberCircus",
+  "name": "Cyber Circus | Enterprise Software Development & Digital Transformation",
+  "short_name": "Cyber Circus",
+  "description": "Cyber Circus delivers enterprise software solutions, digital transformation, and technology consulting for global businesses.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -10,6 +11,31 @@
       "src": "/favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "en",
+  "scope": "/",
+  "shortcuts": [
+    {
+      "name": "Schedule a Consultation",
+      "url": "/contact",
+      "description": "Connect with the Cyber Circus team to discuss enterprise software projects."
+    },
+    {
+      "name": "Our Services",
+      "url": "/services",
+      "description": "View Cyber Circus enterprise software capabilities and solutions."
     }
   ]
 }
