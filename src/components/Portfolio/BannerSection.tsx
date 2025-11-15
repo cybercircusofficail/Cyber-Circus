@@ -33,7 +33,7 @@ const BannerSection: React.FC = () => {
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-gray-600 dark:text-slate-300 max-w-xl">
-                We've built everything from custom web platforms to mobile apps and enterprise systems. Take a look at some of the projects we're proud of—each one solved a real business challenge and delivered real results.
+                We&apos;ve built everything from custom web platforms to mobile apps and enterprise systems. Take a look at some of the projects we&apos;re proud of—each one solved a real business challenge and delivered real results.
               </p>
               <div className="mt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button

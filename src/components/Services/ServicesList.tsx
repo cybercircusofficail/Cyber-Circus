@@ -95,7 +95,7 @@ const ServicesList: React.FC = () => {
               Comprehensive Software Solutions
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              We handle everything from planning and design to development, testing, and deployment. No matter what you're building, we've got the experience and expertise to make it happen—and make it work well.
+              We handle everything from planning and design to development, testing, and deployment. No matter what you&apos;re building, we&apos;ve got the experience and expertise to make it happen—and make it work well.
             </p>
           </div>
         </Fade>

@@ -22,7 +22,7 @@ const ServicesCTA: React.FC = () => {
               Ready to Transform Your Business?
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto mb-8">
-              Ready to start your next project? Get in touch and let's discuss what you're trying to build. We'll help you understand your options and create a plan that fits your goals and budget.
+              Ready to start your next project? Get in touch and let&apos;s discuss what you&apos;re trying to build. We&apos;ll help you understand your options and create a plan that fits your goals and budget.
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
               <Button

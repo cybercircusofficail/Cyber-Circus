@@ -37,7 +37,7 @@ const BannerSection: React.FC = () => {
               We build custom software that transforms how enterprises operate, helping teams move faster, work smarter, and stay ahead of the competition.
             </p>
             <p className="mt-6 text-lg leading-relaxed max-w-xl text-gray-700 dark:text-gray-300">
-              Over the years, we've worked with organizations across industries—from startups scaling fast to Fortune 500 companies modernizing legacy systems. Our team understands that great software isn't just about code; it's about solving real business challenges with technology that's built to last.
+              Over the years, we&apos;ve worked with organizations across industries—from startups scaling fast to Fortune 500 companies modernizing legacy systems. Our team understands that great software isn&apos;t just about code; it&apos;s about solving real business challenges with technology that&apos;s built to last.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start">
               <Button

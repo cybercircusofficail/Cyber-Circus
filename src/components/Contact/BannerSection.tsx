@@ -39,7 +39,7 @@ const BannerSection: React.FC = () => {
               </h1>
 
               <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
-                Got a project in mind? Let's talk about it. Whether you're looking to build something new, modernize existing systems, or just explore what's possible, we're here to help. Fill out the form below and we'll get back to you within 24 hours.
+                Got a project in mind? Let&apos;s talk about it. Whether you&apos;re looking to build something new, modernize existing systems, or just explore what&apos;s possible, we&apos;re here to help. Fill out the form below and we&apos;ll get back to you within 24 hours.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">

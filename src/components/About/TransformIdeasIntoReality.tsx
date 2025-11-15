@@ -121,7 +121,7 @@ const TransformIdeasIntoReality: React.FC = () => {
               Transforming Business Vision into Enterprise Software Solutions
             </h2>
             <p className="max-w-2xl mx-auto text-lg">
-              We work with businesses that want to build better software. Sometimes that means starting from scratch. Sometimes it means fixing what's broken. Either way, we're here to help.
+              We work with businesses that want to build better software. Sometimes that means starting from scratch. Sometimes it means fixing what&apos;s broken. Either way, we&apos;re here to help.
             </p>
           </Fade>
         </motion.div>
@@ -157,10 +157,10 @@ const TransformIdeasIntoReality: React.FC = () => {
                 Our Commitment to Excellence
               </h3>
               <p className="mb-4 text-gray-600 dark:text-gray-300">
-                Good software starts with understanding your business. We spend time getting to know how you work, what problems you're trying to solve, and what success looks like for you. Then we build something that actually helps.
+                Good software starts with understanding your business. We spend time getting to know how you work, what problems you&apos;re trying to solve, and what success looks like for you. Then we build something that actually helps.
               </p>
               <p className="mb-6 text-gray-600 dark:text-gray-300">
-                Our team doesn't just write code—we think about your business, ask questions, and challenge assumptions when it makes sense. The result? Software that works the way you need it to, not the way we assume you need it.
+                Our team doesn&apos;t just write code—we think about your business, ask questions, and challenge assumptions when it makes sense. The result? Software that works the way you need it to, not the way we assume you need it.
               </p>
             </div>
             <div>

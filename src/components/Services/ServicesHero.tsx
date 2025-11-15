@@ -40,7 +40,7 @@ const ServicesHero: React.FC = () => {
                 </span>
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                We build software that solves real problems. Whether you need a custom web application, a mobile app, or help modernizing your infrastructure, we've got the expertise to make it happen. Every project is different, and we treat yours that way.
+                We build software that solves real problems. Whether you need a custom web application, a mobile app, or help modernizing your infrastructure, we&apos;ve got the expertise to make it happen. Every project is different, and we treat yours that way.
               </p>
             </div>
           </Fade>
